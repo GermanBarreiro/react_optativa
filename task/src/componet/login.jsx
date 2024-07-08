@@ -10,7 +10,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('/user.json');
+      const response = await fetch('../credenciales/login.json');
       const userData = await response.json();
 
       if (email === userData.email && password === userData.password) {
