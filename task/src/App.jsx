@@ -1,7 +1,9 @@
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './componet/login';
 import Home from './componet/home';
-export default function App() {
+
+ function App() {
   return (
     <Router>
       <Routes>
@@ -11,3 +13,4 @@ export default function App() {
     </Router>
   );
 }
+export default App

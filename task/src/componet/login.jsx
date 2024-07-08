@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import userData from '../credenciales/login.json';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     try {
-      const response = await fetch('../credenciales/login.json');
-      const userData = await response.json();
-
-      if (email === userData.email && password === userData.password) {
+      const user = userData.userData.find(u => u.email === email && u.password === password);
+      
+      if (user) {
         alert('Inicio de sesión exitoso');
         navigate('/home');
       } else {
         alert('Error: Credenciales incorrectas');
       }
     } catch (error) {
-      console.error('Error al obtener los datos:', error);
-      alert('Error al iniciar sesión');
+      console.error('Error al verificar las credenciales:', error);
+      alert(`Error al iniciar sesión: ${error.message}`);
     }
   };
 

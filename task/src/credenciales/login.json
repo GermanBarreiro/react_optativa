@@ -1,5 +1,8 @@
 {
-    "email": "germanBarrerio@gmail.com",
-    "password": "1234"
-  }
-  
+  "userData": [
+    {
+      "email": "germanBarrerio@gmail.com",
+      "password": "1234"
+    }
+  ]
+}
